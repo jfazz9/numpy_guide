@@ -45,4 +45,30 @@ print(index3d_b)
 
 using maths to manipulate the array'''
 
-print(array2d + array_3d)
+try:
+    array_3d + array2d
+except ValueError as v:
+    print("3d adding 2d array doesn't work as causes a value error with shape or array (dimensions aren't the same)")
+
+array_3de = np.array([[[1,1,1], [2,2,2], [3,3,3], [1,1,1]],
+                      [[2,2,2], [3,3,3], [1,1,1], [2,2,2]]
+                       ])
+
+new_one = np.reshape(array_3d, (4,6)) # reshapes to two rows and 12 columns
+print(new_one)
+print(array_3d)
+# array_3d + array_3de
+new_two = np.reshape(array_3d, (12,2))
+print(new_two)
+new_three = np.reshape(array_3de, (12,2), order= 'F') #order args; A, C, F
+#now we can add multiply, subtract the arrays;
+print(new_three + new_two)
+
+print(np.average(array_3de))
+print(np.median(array_3d))
+print(np.max(array_3d))
+
+ones = np.ones((2,3, 2, 2, 2,2))
+
+slice_one = ones[1,1,1,1,1,1]
+print(slice_one)
