@@ -1,6 +1,8 @@
+#%%
 import numpy as np
+import matplotlib.pyplot as plt
 
-arr = np.array([a for a in range(11)])
+arr = np.array([a for a in np.arange(11)])
 
 arr[1:9:3] # doesn't work add arr as variable
 arr = arr[1:9:3] # start, stop, step
@@ -68,7 +70,35 @@ print(np.average(array_3de))
 print(np.median(array_3d))
 print(np.max(array_3d))
 
-ones = np.ones((2,3, 2, 2, 2,2))
+ones = np.ones((2,3, 2, 2, 2,2)) #creates a six dimensional array, 6 args
 
 slice_one = ones[1,1,1,1,1,1]
 print(slice_one)
+
+'''example of using basic ML with numpy'''
+
+#yearly salary's in thousands
+alice, bob, tim = [50, 53, 60], [80, 75, 66], [90, 92, 95]
+
+salaries = np.array([alice, bob, tim])
+taxation = np.array([[0.1, 0.2, 0.24],
+                    [0.2, 0.3, 0.4],
+                    [0.2, 0.3, 0.1]
+                    ])
+print('here is the dim')
+print(np.ndim(taxation))
+print(taxation)
+max_income = np.max(salaries - salaries * taxation)
+print(max_income)
+
+wages = np.arange(0.,10., 1) # dot represents the number as a float
+print(wages)
+x = wages
+y = x * 2 + 4
+print(y)
+fig = plt.figure()
+
+plt.plot(y, np.sin(y))
+plt.show()
+
+# %%
