@@ -97,7 +97,7 @@ x = wages
 y = x * 2 + 4
 print(y)
 fig = plt.figure()
-
+print(fig)
 plt.plot(y, np.sin(y))
 plt.show()
 
